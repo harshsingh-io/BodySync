@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#381e72</color>
+    <color name="primary_text">#e5d7fb</color>
+    <color name="primaryContainer">#eaddff</color>
+    <color name="primaryContainer_text">#4f378b</color>
+    <color name="secondary">#d0bcff</color>
+    <color name="secondary_text">#3c2276</color>
+    <color name="background">#eaddff</color>
+    <color name="text">#4f378b</color>
+
+    <color name="toolbar_color_control_normal">#381e72</color>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/primaryContainer_text">
+    <item android:id="@+id/mask">
+        <shape android:shape="oval" >
+            <solid android:color="@color/primary" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/item_circular_color_accent" />
+
+</ripple>
