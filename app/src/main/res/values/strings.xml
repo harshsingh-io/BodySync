@@ -3,4 +3,7 @@
     <string name="start">START</string>
     <string name="starting_page_logo">Starting Page Logo</string>
     <string name="get_ready_for">GET READY FOR</string>
+    <string name="exercise_name">EXERCISE NAME</string>
+    <string name="_10">10</string>
+    <string name="_30">30</string>
 </resources>

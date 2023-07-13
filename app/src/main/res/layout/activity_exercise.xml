@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ExerciseActivity"
-    android:background="@color/background">
+    android:background="@color/white">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarExercise"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:theme="@style/ToolbarTheme"
-        android:background="@color/white"
+        android:background="@color/background"
         app:titleTextColor="@color/primary"
         app:layout_constraintTop_toTopOf="parent"
         />
@@ -26,11 +26,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/flProgressBar"
+        app:layout_constraintBottom_toTopOf="@id/flRestView"
         />
 
     <FrameLayout
-        android:id="@+id/flProgressBar"
+        android:id="@+id/flRestView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
@@ -64,7 +64,7 @@
                 android:id="@+id/tvTimer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10"
+                android:text="@string/_10"
                 android:textColor="@color/background"
                 android:textSize="@dimen/default_button_text_size"
                 android:textStyle="bold" />
@@ -72,10 +72,10 @@
 
     </FrameLayout>
     <TextView
-        android:id="@+id/tvTitleExercise"
+        android:id="@+id/tvTitleExerciseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EXERCISE NAME"
+        android:text="@string/exercise_name"
         android:textSize="@dimen/default_button_text_size"
         android:textColor="@color/primary"
         android:visibility="invisible"
@@ -85,6 +85,16 @@
         app:layout_constraintBottom_toTopOf="@id/flProgressBarExercise"
         />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_lunge"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitleExerciseName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbarExercise" />
     <FrameLayout
         android:id="@+id/flProgressBarExercise"
         android:layout_width="100dp"
@@ -95,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/flProgressBar">
+        app:layout_constraintTop_toBottomOf="@id/flRestView">
 
         <ProgressBar
             android:id="@+id/progressBarExercise"
@@ -121,7 +131,7 @@
                 android:id="@+id/tvTimerExercise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30"
+                android:text="@string/_30"
                 android:textColor="@color/background"
                 android:textSize="@dimen/default_button_text_size"
                 android:textStyle="bold" />
