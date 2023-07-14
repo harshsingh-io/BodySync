@@ -69,8 +69,27 @@
                 android:textSize="@dimen/default_button_text_size"
                 android:textStyle="bold" />
         </LinearLayout>
-
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvUpcomingExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upcoming_exercise"
+        android:paddingTop="@dimen/main_screen_main_layout_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flRestView" />
+    <TextView
+        android:id="@+id/tvUpcomingExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        android:paddingTop="@dimen/main_screen_main_layout_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpcomingExercise" />
     <TextView
         android:id="@+id/tvTitleExerciseName"
         android:layout_width="wrap_content"
@@ -91,10 +110,12 @@
         android:layout_height="0dp"
         android:src="@drawable/ic_lunge"
         android:visibility="invisible"
+
         app:layout_constraintBottom_toTopOf="@+id/tvTitleExerciseName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbarExercise" />
+
     <FrameLayout
         android:id="@+id/flProgressBarExercise"
         android:layout_width="100dp"
