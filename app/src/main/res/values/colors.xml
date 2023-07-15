@@ -10,6 +10,7 @@
     <color name="secondary_text">#3c2276</color>
     <color name="background">#eaddff</color>
     <color name="text">#4f378b</color>
+    <color name="animation_color">#fbfbfb</color>
 
     <color name="toolbar_color_control_normal">#381e72</color>
 </resources>
