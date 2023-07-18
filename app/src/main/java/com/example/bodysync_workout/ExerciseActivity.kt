@@ -47,8 +47,9 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun setupRestView() {
 
         try {
-            val soundURI = Uri.parse("android.resource://com.example.bodysync_workout"+R.raw.press_start)
-
+            val soundURI = Uri.parse(
+                "android.resource://com.example.bodysync_workout"+R.raw.press_start)
+            player = MediaPlayer.create(applicationContext, soundURI)
         }catch (e: Exception) {
             e.printStackTrace()
         }
@@ -157,6 +158,9 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         if (tts != null) {
             tts!!.stop()
             tts!!.shutdown()
+        }
+        if (player != null) {
+            player!!.stop()
         }
         binding = null
     }
