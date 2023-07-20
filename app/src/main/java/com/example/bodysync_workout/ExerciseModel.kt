@@ -31,7 +31,7 @@ class ExerciseModel(
         this.image = image
     }
 
-    fun isCompleted(): Boolean {
+    fun getIsCompleted(): Boolean {
         return isCompleted
     }
 
