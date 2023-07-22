@@ -7,4 +7,7 @@
     <string name="_10">10</string>
     <string name="_30">30</string>
     <string name="upcoming_exercise">UPCOMING EXERCISE :</string>
+    <string name="finish">FINISH</string>
+    <string name="bmi">BMI</string>
+    <string name="calculate">CALCULATE</string>
 </resources>
