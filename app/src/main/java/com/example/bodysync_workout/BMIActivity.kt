@@ -37,13 +37,59 @@ class BMIActivity : AppCompatActivity() {
             }
         }
         binding?.rbMetricUnits?.setOnClickListener{
-            binding?.tilMetricUnitHeight?.visibility= View.VISIBLE
-            binding?.llUsUnitTil?.visibility= View.INVISIBLE
+            makeVisibleMetricUnitsView()
+            binding?.btnCalculateUnits?.setOnClickListener {
+                if (validateMetricUnits()) {
+                    val heightValue: Float =
+                        binding?.etMetricUnitHeight?.text.toString().toFloat() / 100
+                    val weightValue: Float = binding?.etMetricUnitWeight?.text.toString().toFloat()
+                    val bmi = weightValue / (heightValue * heightValue)
+                    displayBMIResult(bmi)
+                } else {
+                    Toast.makeText(
+                        this@BMIActivity, "Please Enter valid values.", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
         binding?.rbUSUnits?.setOnClickListener{
-            binding?.tilMetricUnitHeight?.visibility= View.INVISIBLE
-            binding?.llUsUnitTil?.visibility= View.VISIBLE
+            makeVisibleUsUnitView()
+            binding?.btnCalculateUnits?.setOnClickListener {
+                if (validateMetricUnits()) {
+                    val heightValue: Float =
+                        (((binding?.etUsUnitHeightInFeet?.text.toString().toFloat()*12f)+
+                                (binding?.etUsUnitHeightInInch?.text.toString().toFloat()))*
+                                2.54f)/100
+                    //((5feet*12)+11inches)*2.54) = 180.3399cm
+                    val weightValue: Float = binding?.etMetricUnitWeight?.text.toString().toFloat()
+                    val bmi = weightValue / (heightValue * heightValue)
+                    displayBMIResult(bmi)
+                } else {
+                    Toast.makeText(
+                        this@BMIActivity, "Please Enter valid values.", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
+    }
+    private fun makeVisibleMetricUnitsView(){
+        binding?.llDisplayBMIResult?.visibility = View.INVISIBLE
+        binding?.tilMetricUnitHeight?.visibility= View.VISIBLE
+        binding?.llUsUnitTil?.visibility= View.INVISIBLE
+        binding?.etMetricUnitHeight?.text!!.clear()
+        binding?.etMetricUnitWeight?.text!!.clear()
+
+    }
+    private fun makeVisibleUsUnitView(){
+        binding?.llDisplayBMIResult?.visibility = View.INVISIBLE
+        binding?.tilMetricUnitHeight?.visibility= View.INVISIBLE
+        binding?.llUsUnitTil?.visibility= View.VISIBLE
+
+        binding?.etMetricUnitWeight?.text!!.clear()
+        binding?.etUsUnitHeightInFeet?.text!!.clear()
+        binding?.etUsUnitHeightInInch?.text!!.clear()
+
+
     }
     private fun displayBMIResult(bmi: Float) {
         val bmiLabel: String
