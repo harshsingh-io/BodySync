@@ -20,12 +20,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var binding: ActivityExerciseBinding? = null
 
     private var restTimer: CountDownTimer? = null
-    private var restProgress = 0
-    private var restTimerDuration : Long = 1
+    private var restProgress = 1
+    private var restTimerDuration: Long = 9
 
     private var exerciseTimer: CountDownTimer? = null
     private var exerciseProgress = 0
-    private var exerciseTimerDuration : Long = 1
+    private var exerciseTimerDuration: Long = 29
 
     private var exerciseList: ArrayList<ExerciseModel>? = null
     private var currentExercisePosition = -1
@@ -55,7 +55,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onBackPressed() {
         customDialogForBackButton()
     }
-    private fun customDialogForBackButton(){
+
+    private fun customDialogForBackButton() {
         val customDialog = Dialog(this)
         val dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
         customDialog.setContentView(dialogBinding.root)
@@ -69,13 +70,16 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
         customDialog.show()
     }
+
     private fun setupRestView() {
 
         try {
             val soundURI = Uri.parse(
-                "android.resource://com.example.bodysync_workout" + R.raw.press_start
+                "android.resource://com.example.bodysync_workout/${R.raw.rest_indication}"
             )
             player = MediaPlayer.create(applicationContext, soundURI)
+            player?.isLooping = false
+            player?.start()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -99,7 +103,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         binding?.progressBar?.progress = restProgress
         binding?.tvUpcomingExerciseName?.text = exerciseList!![currentExercisePosition + 1]
             .getName()
-        restTimer = object : CountDownTimer(restTimerDuration*1000, 1000) {
+        restTimer = object : CountDownTimer(restTimerDuration * 1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 restProgress++
                 binding?.progressBar?.progress = 10 - restProgress
@@ -140,7 +144,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun setExerciseProgressBar() {
         binding?.progressBarExercise?.progress = exerciseProgress
 
-        exerciseTimer = object : CountDownTimer(exerciseTimerDuration*1000, 1000) {
+        exerciseTimer = object : CountDownTimer(exerciseTimerDuration * 1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++
                 binding?.progressBarExercise?.progress = 30 - exerciseProgress
@@ -170,6 +174,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             } else {
                 Log.e("TTS", "Initialization Failed!")
             }
+        }  else {
+            Log.e("TTS", "Initialization Failed!")
         }
     }
 

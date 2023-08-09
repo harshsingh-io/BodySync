@@ -39,7 +39,7 @@ class BMIActivity : AppCompatActivity() {
             }
         }
         binding?.btnCalculateUnits?.setOnClickListener {
-             calculateUnits()
+            calculateUnits()
         }
 
     }
@@ -62,9 +62,9 @@ class BMIActivity : AppCompatActivity() {
             if (validateUsUnits()) {
                 val heightInFeet: Float = binding?.etUsUnitHeightInFeet?.text.toString().toFloat()
                 val heightInInch: Float = binding?.etUsUnitHeightInInch?.text.toString().toFloat()
-                val heightValue: Float = ((( heightInFeet* 12f) + (heightInInch)))
+                val heightValue: Float = (((heightInFeet * 12f) + (heightInInch)))
                 val weightValueInLb: Float = binding?.etUsUnitWeight?.text.toString().toFloat()
-                val bmi = (weightValueInLb / (heightValue * heightValue))*703
+                val bmi = (weightValueInLb / (heightValue * heightValue)) * 703
                 displayBMIResult(bmi)
             } else {
                 Toast.makeText(
@@ -135,7 +135,6 @@ class BMIActivity : AppCompatActivity() {
         binding?.tvBMIType?.text = bmiLabel
         binding?.tvBMIDescription?.text = bmiDescription
         binding?.llDisplayBMIResult?.visibility = View.VISIBLE
-        
     }
 
     private fun validateMetricUnits(): Boolean {

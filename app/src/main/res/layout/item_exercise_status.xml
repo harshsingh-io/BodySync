@@ -11,5 +11,4 @@
     android:textColor="@color/background"
     android:textSize="14sp"
     android:textStyle="bold"
-    tools:text="1"
-    />
+    tools:text="1" />

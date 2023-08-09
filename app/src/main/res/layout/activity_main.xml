@@ -14,9 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:contentDescription="@string/starting_page_logo"
+        android:src="@drawable/img_main_logo"
         app:layout_constraintBottom_toTopOf="@+id/flStart"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/img_main_logo"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/flStart"
@@ -25,8 +25,7 @@
         android:background="@drawable/item_color_accent_border_ripple_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myImageView"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/myImageView">
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,10 +42,9 @@
         android:id="@+id/flBMI"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="150dp"
         android:background="@drawable/item_color_accent_border_ripple_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flHistory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flStart">
 
@@ -60,18 +58,58 @@
             android:textStyle="bold" />
 
     </FrameLayout>
+
     <TextView
         android:id="@+id/tvCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/main_screen_main_layout_padding"
         android:text="@string/calculate"
         android:textColor="@color/primary"
-        android:padding="@dimen/main_screen_main_layout_padding"
-        app:layout_constraintTop_toBottomOf="@+id/flBMI"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:textSize="@dimen/default_button_text_size"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/flBMI"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/flBMI"
+        app:layout_constraintTop_toBottomOf="@+id/flBMI" />
+
+    <FrameLayout
+        android:id="@+id/flHistory"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/item_color_accent_border_ripple_background"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/flBMI"
+        app:layout_constraintTop_toBottomOf="@+id/flStart">
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_recent_history"
+            android:textColor="@color/primary_text" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/main_screen_main_layout_padding"
+        android:text="@string/history"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/default_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/flHistory"
+        app:layout_constraintStart_toStartOf="@+id/flHistory"
+        app:layout_constraintTop_toBottomOf="@+id/flHistory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:background="@drawable/cancel_dialog_background">
+    android:background="@drawable/cancel_dialog_background"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/dialogTitle"
@@ -20,9 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/dialogTitle"
         android:layout_marginTop="8dp"
-        android:textColor="@color/black"
         android:text="Are you sure you want to go back?"
+        android:textColor="@color/black"
         android:textSize="16sp" />
+
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="wrap_content"
@@ -35,9 +36,9 @@
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:text="Cancel"
-            android:textSize="16sp"
-            android:layout_marginEnd="16dp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btnConfirm"
