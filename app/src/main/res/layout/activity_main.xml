@@ -12,9 +12,11 @@
     <ImageView
         android:id="@+id/myImageView"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="350dp"
         android:contentDescription="@string/starting_page_logo"
         android:src="@drawable/img_main_logo"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintBottom_toTopOf="@+id/flStart"
         app:layout_constraintTop_toTopOf="parent" />
 
