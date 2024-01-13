@@ -2,7 +2,7 @@
 
 Welcome to BodySync, your all-in-one fitness app designed to elevate your home workout experience!
 
-## Preview of App
+## Demo
 -
 
 ## Features
